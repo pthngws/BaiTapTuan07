@@ -1,4 +1,4 @@
-package com.example.btt7;
+package com.example.btt7.model;
 
 import com.google.gson.annotations.SerializedName;
 

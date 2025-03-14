@@ -1,16 +1,17 @@
-package com.example.btt7;
+package com.example.btt7.activity;
 
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.btt7.network.APIService;
+import com.example.btt7.model.Category;
+import com.example.btt7.R;
+import com.example.btt7.network.RetrofitClient;
 import com.example.btt7.adapter.CategoryAdapter;
 
 import java.util.List;
@@ -22,7 +23,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvCate;
-    //Khai bao adapter
     CategoryAdapter categoryAdapter;
     APIService apiService;
     List<Category> categoryList;
@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void GetCategory(){
-        // Goi interface trong API Service
         apiService = RetrofitClient.getRetrofit().create(APIService.class);
         apiService.getCategoryAll().enqueue(new Callback<List<Category>>() {
             @Override
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                     int statusCode = response.code();
                 }
             }
-
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
                 Log.d("Log", t.getMessage());

@@ -1,7 +1,8 @@
-package com.example.btt7;
+package com.example.btt7.network;
+
+import com.example.btt7.model.Category;
 
 import java.util.List;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

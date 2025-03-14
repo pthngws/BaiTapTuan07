@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.btt7.Category;
+import com.example.btt7.model.Category;
 import com.example.btt7.R;
 
 import java.util.List;
@@ -59,12 +59,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             images = (ImageView) itemView.findViewById(R.id.image_cate);
             tenSP = (TextView) itemView.findViewById(R.id.tvNameCategory);
 
-            // bat su kien
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Xu ly khi nhap vao item Category
-                    Toast.makeText(context, "Ban da chon category" + tenSP.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Bạn chọn" + tenSP.getText().toString(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
